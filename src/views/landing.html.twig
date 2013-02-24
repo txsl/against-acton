@@ -18,7 +18,7 @@
 		<div class="control-group">
 			<label class="control-label" for="inputUname">College Username</label>
 			<div class="controls">
-				<input type="text" name="uname">
+				<input type="text" name="uname" value="{{data.uname}}" >
 			</div>
 		</div>
 
@@ -32,14 +32,14 @@
 		<div class="control-group">
 			<label class="control-label" for="comments">Would you like to make any comments?</label>
 			<div class="controls">
-				<textarea rows="3" name="comments"></textarea>
+				<textarea rows="3" name="comments">{{data.comments}}</textarea>
 			</div>
 		</div>
 
 		<div class="control-group">
 			<div class="controls">
 				<label class="checkbox">
-					<input type="checkbox" name="anon" value="1"> Do you want to be anonymous?	
+					<input type="checkbox" name="anon" value="1" {% if data.anon %}checked{% endif %}> Do you want to be anonymous?	
 				</label>
 				<button type="submit" class="btn btn-primary">Sign Petition</button>
 			</div>

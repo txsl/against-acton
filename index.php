@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	else
 	{
 		//Render error
-		echo $twig->render('landing.html.twig', array('error' => $result[1]));
+		echo $twig->render('landing.html.twig', array('error' => $result[1], 'data'=>$data));
 	}
 }
 else
