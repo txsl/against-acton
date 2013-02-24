@@ -1,5 +1,8 @@
 <?php
 
+//Set this to false for production.
+define('LOCAL', false);
+
 $db = new mysqli('localhost', 'USER', 'PASS', 'DB');
 
 if ($mysqli->connect_error) 
