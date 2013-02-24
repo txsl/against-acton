@@ -24,7 +24,7 @@ class signatures
 					$info = ldap_get_info($data['uname']);
 					$staff = ($info == "" ? 1 : 0); //This indicates someone without a course, hence staff member.
 					
-					$stmt = $this->db->prepare("INSERT INTO `signatures` (uname, anon, staff, comments) VALUES (?, ?, ?, ?)");
+					$stmt = $this->db->prepare("INSERT INTO `signatures` (uname, anon, staff, comments, time) VALUES (?, ?, ?, ?, NOW())");
 					$stmt->bind_param("siib", $data['uname'], $data['anon'], $staff, $data['comments']);
 					$stmt->execute();
 					$affectedrows = $stmt->affected_rows;
