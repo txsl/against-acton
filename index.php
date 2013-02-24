@@ -10,9 +10,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		$data['anon'] = 0;
 	}
 	$result = $signatures->insert($data);
-	var_dump($result);
+	if($result[0])
+	{
+		// Render good news page
+		echo 'thanks!';
+	}
+	else
+	{
+		//Render error
+		echo $twig->render('landing.html.twig', array('error' => $result[1]));
+	}
 }
-
-echo $twig->render('landing.html.twig');
-
-var_dump($_POST);
+else
+{
+	echo $twig->render('landing.html.twig');
+}

@@ -7,6 +7,13 @@
 <h1>Acton stinks. So sign our petition</h1>
 
 <div class="span7 offset2 hero-unit" style="margin-top:10px">
+
+	{% if error is defined %}
+	<div class="alert alert-error">
+		There was a problem: {{error}}
+	</div>
+	{% endif %}
+
 	<form method="POST" class="form-horizontal">
 		<div class="control-group">
 			<label class="control-label" for="inputUname">College Username</label>

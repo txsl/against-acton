@@ -35,7 +35,7 @@ if(LOCAL)
 	{
         function ldap_get_info($user)
         {
-            return array("Exact Course Title",
+            return array("",
                             "Undergraduate",
                             "Department",
                             "Faculty",

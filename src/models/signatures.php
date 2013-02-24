@@ -22,7 +22,14 @@ class signatures
 				if($already == 0)
 				{
 					$info = ldap_get_info($data['uname']);
-					$staff = ($info == "" ? 1 : 0); //This indicates someone without a course, hence staff member.
+
+					if($info[1] == '')
+					{
+						mail('txl11@imperial.ac.uk', 'Someone was trying to be naughty...', $data['uname'], 'From: txl11@imperial.ac.uk');
+						return array(false, "Nice try, but only real people's accounts (not club/society ones) can sign this petition.");
+					}
+					
+					$staff = ($info[0] == "" ? 1 : 0); //This indicates someone without a course, hence staff member.
 					
 					$stmt = $this->db->prepare("INSERT INTO `signatures` (uname, anon, staff, comments, time) VALUES (?, ?, ?, ?, NOW())");
 					$stmt->bind_param("siib", $data['uname'], $data['anon'], $staff, $data['comments']);
