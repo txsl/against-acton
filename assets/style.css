@@ -11,7 +11,7 @@ body
 
 .container-footer
 {
-	text-align: center;
+	
 }
 
 .container
@@ -25,4 +25,11 @@ body
 		margin-top: 0;
 	}
 */
+}
+
+/* So Twitter and Facebook play nicely */
+
+.twitter-share-button
+{
+	vertical-align: text-bottom !important;
 }

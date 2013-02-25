@@ -2,52 +2,108 @@
 
 {% block content %}
 
-<div class"span12">
+<div class="row-fluid">
 
-<h1>Acton stinks. So sign our petition</h1>
+	<div  class="span4" style="margin-top:10px">
+		<div class="well">
+			<h2>Briefing</h2>
+			<p>
+				Imperial College Union has launched the <a href="https://www.imperialcollegeunion.org/againstacton">#AgainstActon</a> campaign in response to College Management's decision to build a 700-bed Hall of Residence in North Acton - potentially replacing Evelyn Gardens and Garden Hall. As part of this campaign, the Union has released <a href="https://www.imperialcollegeunion.org/againstacton/what-we-want">five requests</a> of College Management. Please show your support for the Union's campaign by signing this petition - it's open to students and staff, and you may sign it anonymously if you'd like.
+			</p>
+		</div>
+		<div class="hidden-phone">
+			<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=%23AgainstActon" data-widget-id="306112680631091200">Tweets about "#AgainstActon"</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-<div class="span7 offset2 hero-unit" style="margin-top:10px">
-
-	{% if error is defined %}
-	<div class="alert alert-error">
-		There was a problem: {{error}}
+		</div>
 	</div>
-	{% endif %}
 
-	<form method="POST" class="form-horizontal">
-		<div class="control-group">
-			<label class="control-label" for="inputUname">College Username</label>
-			<div class="controls">
-				<input type="text" name="uname" value="{{data.uname}}" >
+	<div class="span8">
+		<div class="hero-unit" style="margin-top:10px;">
+			<div class="" style="text-align:center;">
+				<div class="" style="display:inline-block;">
+
+				<h1>Sign the Petition</h1>
+
+				{% if error is defined %}
+				<div class="alert alert-error">
+					There was a problem: {{error}}
+				</div>
+				{% endif %}
+
+				<form method="POST" class="form-horizontal" style="margin-top:20px">
+					<div class="control-group">
+						<label class="control-label" for="inputUname">College Username</label>
+						<div class="controls">
+							<input class="input-large" style="max-width:100%" type="text" name="uname" value="{{data.uname}}" >
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label" for="inputPass">Password</label>
+						<div class="controls">
+							<input class="input-large" style="max-width:100%" type="password" name="pword">
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label" for="comments">Would you like to make any comments (optional)?</label>
+						<div class="controls">
+							<textarea style="max-width:100%" class="input-large" rows="3" name="comments">{{data.comments}}</textarea>
+						</div>
+					</div>
+
+					<div class="control-group">
+						<div class="controls">
+							<label class="checkbox" style="padding-bottom:20px">
+								<input type="checkbox" name="anon" value="1" {% if data.anon %}checked{% endif %}> Do you want to be anonymous?	
+							</label>
+							<button type="submit" class="btn btn-primary">Sign Petition</button>
+						</div>
+					</div>
+
+				</form>
+
+				<div>
+					<h3>Share the Petition</h3>
+				</div>
+
+				<div>
+						<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://union.ic.ac.uk/presidents/againstacton/" data-text="@icunion have created a petition #AgainstActon. Sign it here" data-size="normal" data-dnt="true">Tweet</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+					<div class="fb-send" data-href="https://union.ic.ac.uk/presidents/againstacton"></div>
+				</div>
+			</div>
 			</div>
 		</div>
 
-		<div class="control-group">
-			<label class="control-label" for="inputPass">Password</label>
-			<div class="controls">
-				<input type="password" name="pword">
-			</div>
-		</div>
+		<div class="well">
+			<h3>FAQs</h3>
+				<p>
+					<i class="icon-question-sign"></i><strong> Why do I need to use my college username and password?</strong></br>
+					<i class="icon-ok"></i> We use your college credentials to ensure you are a member of the college community. If you don't have an account, you can still <a href="mailto:president@imperial.ac.uk">email</a> us with your views. You can read more about our policy on passwords on the <a target="_blank" href="https://union.ic.ac.uk/sysadmin/">SysAdmin page</a>.
+				</p>
+				<p>
+					<i class="icon-question-sign"></i><strong> Do you store my college username?</strong></br>
+					<i class="icon-ok"></i> We store usernames of signatories in a secure database. This is to ensure that you can't sign it twice. If you request to be anonymous, we will not reveal your identity to anyone.
+				</p>
 
-		<div class="control-group">
-			<label class="control-label" for="comments">Would you like to make any comments?</label>
-			<div class="controls">
-				<textarea rows="3" name="comments">{{data.comments}}</textarea>
-			</div>
+				<p>
+					<i class="icon-question-sign"></i><strong> What do I do if I experience any issues with this?</strong></br>
+					<i class="icon-ok"></i> Please <a href="mailto:thomas.lim11@imperial.ac.uk">email</a> us with the details.
+				</p>
 		</div>
-
-		<div class="control-group">
-			<div class="controls">
-				<label class="checkbox">
-					<input type="checkbox" name="anon" value="1" {% if data.anon %}checked{% endif %}> Do you want to be anonymous?	
-				</label>
-				<button type="submit" class="btn btn-primary">Sign Petition</button>
-			</div>
-		</div>
-
-	</form>
+	</div>
 </div>
 
-</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 {% endblock %}
