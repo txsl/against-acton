@@ -21,11 +21,10 @@ class signatures
 				if($already == 0)
 				{
 					$info = ldap_get_info($data['uname']);
-
 					if($info[1] == '')
 					{
 						mail('txl11@imperial.ac.uk', 'Someone was trying to be naughty...', $data['uname'], 'From: txl11@imperial.ac.uk');
-						return array(false, "Nice try, but only real people's accounts (not club/society ones) can sign this petition.");
+						return array(false, 'Apparently we think you are a club/society. Were we wrong? <a href="mailto:thomas.lim11@imperial.ac.uk">Email us</a>.');
 					}
 					
 					$staff = ($info[0] == "" ? 1 : 0); //This indicates someone without a course, hence staff member.
