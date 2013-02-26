@@ -11,11 +11,16 @@ require __DIR__.'/db.php';
 require __DIR__.'/models/signatures.php';
 $signatures = new signatures($db);
 
+//Anti CSRF styff
+require __DIR__.'/models/nocsrf.php';
+
 //Let's get Twig set up
 require __DIR__.'/../libs/vendor/autoload.php';
 
 $loader = new Twig_Loader_Filesystem(__DIR__.'/views/');
 $twig = new Twig_Environment($loader);
+
+session_start();
 
 if(LOCAL)
 {
