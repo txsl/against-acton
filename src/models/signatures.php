@@ -24,7 +24,7 @@ class signatures
 					if($info[1] == '')
 					{
 						mail('txl11@imperial.ac.uk', 'Someone was trying to be naughty...', $data['uname'], 'From: txl11@imperial.ac.uk');
-						return array(false, 'Apparently we think you are a club/society. Were we wrong? <a href="mailto:thomas.lim11@imperial.ac.uk">Email us</a>.');
+						return array(false, 'Apparently we think you are a club or society. Were we wrong? <a href="mailto:thomas.lim11@imperial.ac.uk">Email us</a>.');
 					}
 					
 					$staff = ($info[0] == "" ? 1 : 0); //This indicates someone without a course, hence staff member.
