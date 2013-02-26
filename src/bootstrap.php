@@ -26,6 +26,8 @@ require __DIR__.'/../libs/vendor/autoload.php';
 $loader = new Twig_Loader_Filesystem(__DIR__.'/views/');
 $twig = new Twig_Environment($loader);
 
+include __DIR__.'/../libs/uaparser/php/uaparser.php';
+
 session_start();
 
 if(LOCAL)
