@@ -1,0 +1,3 @@
+[submodule "libs/uaparser"]
+	path = libs/uaparser
+	url = git@github.com:tobie/ua-parser.git
