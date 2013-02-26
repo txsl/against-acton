@@ -2,62 +2,121 @@
 
 {% block content %}
 
-		<div class="hero-unit" style="margin-top:10px;">
+		<div class="hero-unit hidden-phone" style="margin-top:10px;">
 			<div class="" style="text-align:center;">
 				<div class="" style="display:inline-block;">
 
-				<h1>Sign the Petition</h1>
+					<h1>Sign the Petition</h1>
 
-				{% if error is defined %}
-				<div class="alert alert-error">
-					There was a problem: {{error}}
-				</div>
-				{% endif %}
+					{% if error is defined %}
+					<div class="alert alert-error">
+						There was a problem: {{error}}
+					</div>
+					{% endif %}
 
-				<form method="POST" class="form-horizontal" style="margin-top:40px">
-					<div class="control-group">
-						<label class="control-label" for="inputUname">College Username</label>
-						<div class="controls">
-							<input class="input-large" style="max-width:100%" type="text" name="uname" value="{{data.uname}}" >
+					<form method="POST" class="form-horizontal" style="margin-top:40px">
+						<div class="control-group">
+							<label class="control-label" for="inputUname">College Username</label>
+							<div class="controls">
+								<input class="input-large" style="max-width:100%" type="text" name="uname" value="{{data.uname}}" >
+							</div>
 						</div>
+
+						<div class="control-group">
+							<label class="control-label" for="inputPass">Password</label>
+							<div class="controls">
+								<input class="input-large" style="max-width:100%" type="password" name="pword">
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label" for="comments">Would you like to make any comments (optional)?</label>
+							<div class="controls">
+								<textarea style="max-width:100%" class="input-large" rows="3" name="comments">{{data.comments}}</textarea>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<div class="controls">
+								<label class="checkbox" style="padding-bottom:20px">
+									<input type="checkbox" style="float:none;vertical-align:top;" name="anon" value="1" {% if data.anon %}checked{% endif %}> Do you want to be anonymous?	
+								</label>
+								<button type="submit" class="btn btn-primary" style="">Sign Petition</button>
+							</div>
+						</div>
+					</form>
+
+					<div>
+						<h3>Share the Petition</h3>
+						<h4>We want you to tell your friends!</h4>
 					</div>
 
-					<div class="control-group">
-						<label class="control-label" for="inputPass">Password</label>
-						<div class="controls">
-							<input class="input-large" style="max-width:100%" type="password" name="pword">
-						</div>
+					<div>
+							<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://union.ic.ac.uk/presidents/againstacton/" data-text="@icunion have created a petition #AgainstActon. Sign it here" data-size="normal" data-dnt="true">Tweet</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+						<div class="fb-send" data-href="https://union.ic.ac.uk/presidents/againstacton"></div>
 					</div>
-
-					<div class="control-group">
-						<label class="control-label" for="comments">Would you like to make any comments (optional)?</label>
-						<div class="controls">
-							<textarea style="max-width:100%" class="input-large" rows="3" name="comments">{{data.comments}}</textarea>
-						</div>
-					</div>
-
-					<div class="control-group">
-						<div class="controls">
-							<label class="checkbox" style="padding-bottom:20px">
-								<input type="checkbox" style="float:none;vertical-align:top;" name="anon" value="1" {% if data.anon %}checked{% endif %}> Do you want to be anonymous?	
-							</label>
-							<button type="submit" class="btn btn-primary" style="">Sign Petition</button>
-						</div>
-					</div>
-				</form>
-
-				<div>
-					<h3>Share the Petition</h3>
-					<h4>We want you to tell your friends!</h4>
-				</div>
-
-				<div>
-						<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://union.ic.ac.uk/presidents/againstacton/" data-text="@icunion have created a petition #AgainstActon. Sign it here" data-size="normal" data-dnt="true">Tweet</a>
-						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-					<div class="fb-send" data-href="https://union.ic.ac.uk/presidents/againstacton"></div>
 				</div>
 			</div>
+		</div>
+
+		<div class="well visible-phone" style="margin-top:10px;">
+			<div class="" style="text-align:center;">
+				<div class="" style="display:inline-block;">
+
+					<h1>Sign the Petition</h1>
+
+					{% if error is defined %}
+					<div class="alert alert-error">
+						There was a problem: {{error}}
+					</div>
+					{% endif %}
+
+					<form method="POST" class="form-horizontal" style="margin-top:40px">
+						<div class="control-group">
+							<label class="control-label" for="inputUname">College Username</label>
+							<div class="controls">
+								<input class="input-large" style="max-width:100%" type="text" name="uname" value="{{data.uname}}" >
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label" for="inputPass">Password</label>
+							<div class="controls">
+								<input class="input-large" style="max-width:100%" type="password" name="pword">
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label" for="comments">Would you like to make any comments (optional)?</label>
+							<div class="controls">
+								<textarea style="max-width:100%" class="input-large" rows="3" name="comments">{{data.comments}}</textarea>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<div class="controls">
+								<label class="checkbox" style="padding-bottom:20px">
+									<input type="checkbox" style="float:none;vertical-align:top;" name="anon" value="1" {% if data.anon %}checked{% endif %}> Do you want to be anonymous?	
+								</label>
+								<button type="submit" class="btn btn-primary" style="">Sign Petition</button>
+							</div>
+						</div>
+					</form>
+
+					<div>
+						<h3>Share the Petition</h3>
+						<h4>We want you to tell your friends!</h4>
+					</div>
+
+					<div>
+							<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://union.ic.ac.uk/presidents/againstacton/" data-text="@icunion have created a petition #AgainstActon. Sign it here" data-size="normal" data-dnt="true">Tweet</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+						<div class="fb-send" data-href="https://union.ic.ac.uk/presidents/againstacton"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 
