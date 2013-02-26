@@ -26,3 +26,16 @@ CREATE TABLE IF NOT EXISTS `signatures` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uname` (`uname`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `analytics`
+--
+
+CREATE TABLE IF NOT EXISTS `analytics` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uastring` varchar(255) NOT NULL,
+  `time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

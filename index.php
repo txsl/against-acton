@@ -36,8 +36,8 @@ else
 {
 	$csrfkey = NoCSRF::generate('notrolling');
 	echo $twig->render('landing.html.twig', array('csrfkey'=>$csrfkey));
-	$parser = new UAParser;
-	$client = $parser->parse($_SERVER['HTTP_USER_AGENT']);
-	var_dump($client);
-	echo $_SERVER['HTTP_USER_AGENT'];
+	$analytics = new Analytics($db);
+	$analytics->insertUAString($_SERVER['HTTP_USER_AGENT']);
+	/*$parser = new UAParser;
+	$client = $parser->parse($_SERVER['HTTP_USER_AGENT']);*/
 }

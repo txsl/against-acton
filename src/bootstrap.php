@@ -26,7 +26,10 @@ require __DIR__.'/../libs/vendor/autoload.php';
 $loader = new Twig_Loader_Filesystem(__DIR__.'/views/');
 $twig = new Twig_Environment($loader);
 
+//User Agent Parsing library
 include __DIR__.'/../libs/uaparser/php/uaparser.php';
+//Our Model for it
+include __DIR__.'/models/analytics.php';
 
 session_start();
 
