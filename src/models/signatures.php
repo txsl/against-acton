@@ -17,7 +17,6 @@ class signatures
 				$stmt->execute();
 				$stmt->store_result();
 				$already = $stmt->num_rows;
-				var_dump($already);
 				$stmt->close();
 				if($already == 0)
 				{
