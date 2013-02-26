@@ -30,7 +30,7 @@ class signatures
 					$staff = ($info[0] == "" ? 1 : 0); //This indicates someone without a course, hence staff member.
 					
 					$stmt = $this->db->prepare("INSERT INTO `signatures` (uname, anon, staff, comments, time) VALUES (?, ?, ?, ?, NOW())");
-					$stmt->bind_param("siib", $data['uname'], $data['anon'], $staff, $data['comments']);
+					$stmt->bind_param("siis", $data['uname'], $data['anon'], $staff, $data['comments']);
 					$stmt->execute();
 					$affectedrows = $stmt->affected_rows;
 					$stmt->close();
