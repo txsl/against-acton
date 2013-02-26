@@ -26,10 +26,29 @@
 
   <div class="container">
 
+    <div class="row-fluid">
+
+      <div  class="span4" style="margin-top:10px">
+        <div class="well">
+          <h2>Briefing</h2>
+          <p>
+            Imperial College Union has launched the <a href="https://www.imperialcollegeunion.org/againstacton">#AgainstActon</a> campaign in response to College Management's decision to build a 700-bed Hall of Residence in North Acton - potentially replacing Evelyn Gardens and Garden Hall. As part of this campaign, the Union has released <a href="https://www.imperialcollegeunion.org/againstacton/what-we-want">five requests</a> of College Management. Please show your support for the Union's campaign by signing this petition - it's open to students and staff, and you may sign it anonymously if you'd like.
+          </p>
+        </div>
+        <div class="hidden-phone">
+          <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=%23AgainstActon" data-widget-id="306112680631091200">Tweets about "#AgainstActon"</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+        </div>
+      </div>
+      <div class="span8">
+
   {% block content %}
               {{ content|raw }}
   {% endblock %}
 
+      </div>
+    </div>
   </div>
 
   <div class="container container-footer">
