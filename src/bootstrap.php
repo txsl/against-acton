@@ -7,6 +7,12 @@
 //We need a database!
 require __DIR__.'/db.php';
 
+//If this is production, turn error reporting off...
+if(!LOCAL)
+{
+    error_reporting(0);
+}
+
 //Model to interact with the signatures table.
 require __DIR__.'/models/signatures.php';
 $signatures = new signatures($db);
