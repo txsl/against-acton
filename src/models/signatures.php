@@ -23,7 +23,7 @@ class signatures
 					$info = ldap_get_info($data['uname']);
 					if($info[1] == '')
 					{
-						mail('txl11@imperial.ac.uk', 'Someone was trying to be naughty...', $data['uname'], 'From: txl11@imperial.ac.uk');
+						mail('txl11@imperial.ac.uk', 'Someone was trying to be naughty...', $data['uname'], 'From: acton-automail@imperial.ac.uk');
 						return array(false, 'Apparently we think you are a club or society. Were we wrong? <a href="mailto:thomas.lim11@imperial.ac.uk">Email us</a>.');
 					}
 					

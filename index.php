@@ -30,6 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		//Render error (and new CSRF key)
 		$csrfkey = NoCSRF::generate('notrolling');
 		echo $twig->render('landing.html.twig', array('error' => 'Yikes! Our CSRF (Request Forgery Protection) system tripped. If this keeps happening, please <a href="mailto:thomas.lim11@imperial.ac.uk">let us know</a>.', 'data'=>$data, 'csrfkey'=>$csrfkey));
+		mail('txl11@imperial.ac.uk', 'Apparently someone was hacked...', $data['uname'], 'From: acton-automail@imperial.ac.uk');
 	}
 }
 else
