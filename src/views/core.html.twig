@@ -36,10 +36,17 @@
 
 
   <div class="container">
+    <!--<div class="row-fluid">
+      <div class="span12 hero-unit counter">
+      <h1>352 Signatures</h1>
+      </div>
+    </div>-->
 
     <div class="row-fluid">
-
       <div  class="span4" style="margin-top:10px">
+        <div class="hero-unit counter">
+          <h1>352 Signatures</h1>
+        </div>
         <div class="well">
           <h2>Briefing</h2>
           <p>
@@ -95,5 +102,15 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <script>
+
+    $(document).ready(function(){ 
+      $.getJSON('ajaxcount.php', function(data){
+        $('div.counter').html(data.totalsigs);
+      })
+    })
+
+</script>
   </body>
 </html>
