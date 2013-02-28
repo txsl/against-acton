@@ -55,4 +55,10 @@ class signatures
 			return array(false, "Incorrect Username/Password combination");
 		}
 	}
+
+	function numSigs()
+	{
+		$res = $this->db->query("SELECT COUNT(*) FROM `signatures`")->fetch_assoc();
+		return $res['COUNT(*)'];
+	}
 }

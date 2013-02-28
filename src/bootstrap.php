@@ -31,6 +31,8 @@ include __DIR__.'/../libs/uaparser/php/uaparser.php';
 //Our Model for it
 include __DIR__.'/models/analytics.php';
 
+define('CACHEDIR', __DIR__.'/../cache');
+
 session_start();
 
 if(LOCAL)
