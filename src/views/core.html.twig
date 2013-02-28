@@ -39,10 +39,10 @@
     <div class="row-fluid">
       <div  class="span4" style="margin-top:10px">
         <div class="hero-unit counter visible-desktop">
-          <h1>352 Signatures</h1>
+          <h1></h1>
         </div>
         <div class="well counter hidden-desktop">
-          <h1>352 Signatures</h1>
+          <h1></h1>
         </div>
         <div class="well">
           <h2>Briefing</h2>
@@ -101,11 +101,30 @@
     <script src="assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
     <script>
+    $(document).ready(function(){
+      window.count = 0;
+      window.output = 0;
+      function getCount()
+      {
+        $.getJSON('ajaxcount.php', function(data){
+          count = parseInt(data.totalsigs);
+        })
+      }
 
-    $(document).ready(function(){ 
-      $.getJSON('ajaxcount.php', function(data){
-        $('div.counter').html('<h1>'+data.totalsigs+'</h1><p class="lead">Signatures currently</br>Will you sign it?</p>');
-      })
+      function setOutput()
+      {
+        if(output<count)
+        {
+          output++;
+          $('div.counter').html('<h1>'+output+'</h1><p class="lead">Signatures currently</br>Will you sign it?</p>');
+        }
+      }
+
+      getCount();
+
+      window.setInterval(function() { getCount() } , 5000);
+
+      window.setInterval(function() { setOutput() }, 30);
     })
 
 </script>
