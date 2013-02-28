@@ -102,8 +102,8 @@
 
     <script>
     $(document).ready(function(){
-      window.count = 0;
-      window.output = 0;
+      var count = 0;
+      var output = 0;
       function getCount()
       {
         $.getJSON('ajaxcount.php', function(data){
@@ -122,9 +122,9 @@
 
       getCount();
 
-      window.setInterval(function() { getCount() } , 5000);
+      setInterval(function() { getCount() } , 5000);
 
-      window.setInterval(function() { setOutput() }, 30);
+      setInterval(function() { setOutput() }, 5);
     })
 
 </script>
