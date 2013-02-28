@@ -1,0 +1,4 @@
+# Don't wanna serve anything from the cache. Except the htaccess
+*
+!.htaccess
+!.gitignore
